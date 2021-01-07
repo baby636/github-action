@@ -34,3 +34,5 @@ branding:
 runs:
   using: 'node12'
   main: './lib/main.js'
+  args:
+    - "--max-old-space-size=8192"
