@@ -7,7 +7,9 @@
   "scripts": {
     "build": "tsc",
     "test": "mocha -r ts-node/register src/**/*.spec.ts",
-    "release": "git checkout -b releases && npm run build && npm prune --production && git commit -a 'prepared production release'"
+    "release": "git checkout -b releases && npm run build && npm prune --production && git commit -a 'prepared production release'",
+    "prepublish": "npm run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "author": "Nick Merwin (nick@coveralls.io)",
   "license": "MIT",
@@ -30,6 +32,8 @@
     "@actions/core": "^1.2.4",
     "@actions/exec": "^1.0.4",
     "coveralls": "^3.0.13",
-    "request": "^2.88.0"
-  }
+    "request": "^2.88.0",
+    "@snyk/protect": "latest"
+  },
+  "snyk": true
 }
